@@ -1,0 +1,1 @@
+Write-Host (New-TimeSpan 2021-02-01 -end $(Get-Date)).Days
