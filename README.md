@@ -1,2 +1,2 @@
-# teaching
+# teaching-partner
 Teaching Partner
