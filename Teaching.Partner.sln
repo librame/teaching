@@ -17,7 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teaching.Partner.WpfApp", "src\Teaching.Partner.WpfApp\Teaching.Partner.WpfApp.csproj", "{B640B3F5-6E68-4B90-A08F-FBF07B30CBA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teaching.Partner.WpfApp", "src\Teaching.Partner.WpfApp\Teaching.Partner.WpfApp.csproj", "{B640B3F5-6E68-4B90-A08F-FBF07B30CBA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teaching.Partner", "src\Teaching.Partner\Teaching.Partner.csproj", "{0D22F6FA-2BE9-46CD-B2C4-3A072013DE34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +31,17 @@ Global
 		{B640B3F5-6E68-4B90-A08F-FBF07B30CBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B640B3F5-6E68-4B90-A08F-FBF07B30CBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B640B3F5-6E68-4B90-A08F-FBF07B30CBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D22F6FA-2BE9-46CD-B2C4-3A072013DE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D22F6FA-2BE9-46CD-B2C4-3A072013DE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D22F6FA-2BE9-46CD-B2C4-3A072013DE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D22F6FA-2BE9-46CD-B2C4-3A072013DE34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B640B3F5-6E68-4B90-A08F-FBF07B30CBA0} = {575CA397-600D-48C2-A2CC-EAFE24A7E305}
+		{0D22F6FA-2BE9-46CD-B2C4-3A072013DE34} = {575CA397-600D-48C2-A2CC-EAFE24A7E305}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD953362-6695-47EC-9AD1-151C12E97D72}

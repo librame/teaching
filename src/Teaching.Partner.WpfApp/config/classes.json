@@ -1,0 +1,52 @@
+﻿[
+    {
+        "Id": "08",
+        "Name": "08班",
+        "Grade": {
+            "Id": "20",
+            "Name": "20级"
+        },
+        "Students": [
+            {
+                "Id": "20203080817",
+                "Name": "苟驿芯",
+                "Portrait": "images/default.jpg",
+                "Gender": false,
+                "Phone": "130xxxxxxxx",
+                "Email": "test@domain.com",
+                "IdCard": "500383",
+                "Address": ""
+            },
+            {
+                "Id": "20203080834",
+                "Name": "杨博",
+                "Portrait": "images/default.jpg",
+                "Gender": true,
+                "Phone": "130xxxxxxxx",
+                "Email": "test@domain.com",
+                "IdCard": "500383",
+                "Address": ""
+            }
+        ]
+    },
+    {
+        "Id": "10",
+        "Name": "10班",
+        "Grade": {
+            "Id": "20",
+            "Name": "20级"
+        },
+        "Students": [
+            {
+                "Id": "20203081030",
+                "Name": "孙鑫鑫",
+                "Portrait": "images/default.jpg",
+                "Gender": false,
+                "Phone": "130xxxxxxxx",
+                "Email": "test@domain.com",
+                "IdCard": "500383",
+                "Address": ""
+            }
+        ]
+    }
+]

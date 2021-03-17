@@ -1,0 +1,21 @@
+﻿<Window x:Class="Teaching.Partner.WpfApp.CheckJobWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Teaching.Partner.WpfApp"
+        mc:Ignorable="d"
+        Title="检查作业" Height="450" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="tbkTitle" Grid.Row="0" VerticalAlignment="Center" Margin="10">
+        </TextBlock>
+
+        <DataGrid x:Name="dgdResults" Grid.Row="1" IsReadOnly="True">
+        </DataGrid>
+    </Grid>
+</Window>
