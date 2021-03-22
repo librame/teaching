@@ -1,4 +1,8 @@
 ﻿{
+    "Window": {
+        "Width": 1440,
+        "Height": 900
+    },
     "Tab": {
         "Item": {
             "HeaderMargin": 10

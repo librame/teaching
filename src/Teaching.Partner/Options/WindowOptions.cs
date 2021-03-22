@@ -12,15 +12,10 @@
 
 namespace Teaching.Partner
 {
-    /// <summary>
-    /// 样式选项。
-    /// </summary>
-    public class StyleOptions
+    public class WindowOptions
     {
-        public WindowOptions? Window { get; set; }
+        public double Width { get; set; }
 
-        public TabOptions? Tab { get; set; }
-
-        public JobOptions? Job { get; set; }
+        public double Height { get; set; }
     }
 }
