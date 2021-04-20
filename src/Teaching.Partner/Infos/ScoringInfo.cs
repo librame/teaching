@@ -13,14 +13,23 @@
 namespace Teaching.Partner
 {
     /// <summary>
-    /// 样式选项。
+    /// 计分信息。
     /// </summary>
-    public class StyleOptions
+    public class ScoringInfo
     {
-        public WindowOptions? Window { get; set; }
+        /// <summary>
+        /// 标识。
+        /// </summary>
+        public string? Id { get; set; }
 
-        public TabOptions? Tab { get; set; }
+        /// <summary>
+        /// 名称。
+        /// </summary>
+        public string? Name { get; set; }
 
-        public JobOptions? Job { get; set; }
+        /// <summary>
+        /// 分值。
+        /// </summary>
+        public int Score { get; set; }
     }
 }

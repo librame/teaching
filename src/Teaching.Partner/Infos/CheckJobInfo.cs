@@ -10,6 +10,8 @@
 
 #endregion
 
+using System.IO;
+
 namespace Teaching.Partner
 {
     /// <summary>
@@ -26,6 +28,11 @@ namespace Teaching.Partner
         /// 名称。
         /// </summary>
         public string? Name { get; set; }
+
+        /// <summary>
+        /// 文件信息。
+        /// </summary>
+        public FileInfo? File { get; set; }
 
         /// <summary>
         /// 标识有效性。

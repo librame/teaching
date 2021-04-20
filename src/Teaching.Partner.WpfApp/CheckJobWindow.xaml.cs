@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Teaching.Partner.WpfApp
 {
@@ -9,31 +9,38 @@ namespace Teaching.Partner.WpfApp
     /// </summary>
     public partial class CheckJobWindow : Window
     {
-        private readonly string _folder;
         private readonly ClassOptions? _options;
-        private readonly StyleOptions? _style;
+        private readonly MainWindowViewModel _viewModel;
 
 
-        public CheckJobWindow(string folder, ClassOptions? options, StyleOptions? style)
+        public CheckJobWindow(ClassOptions? options, MainWindowViewModel viewModel)
         {
-            _folder = folder;
             _options = options;
-            _style = style;
+            _viewModel = viewModel;
 
             InitializeComponent();
 
             InitializeWindow();
+
+#pragma warning disable CS8629 // 可为 null 的值类型可为 null。
+            FontSize = (double)viewModel.App?.Window?.FontSize;
+#pragma warning restore CS8629 // 可为 null 的值类型可为 null。
         }
+
+
+        /// <summary>
+        /// 检查作业信息列表。
+        /// </summary>
+        public List<CheckJobInfo>? JobInfos { get; private set; }
 
 
         private void InitializeWindow()
         {
-            tbkTitle.Text = $"当前正在检查“{_options?.Grade?.Name + _options?.Name}”作业：{_folder}";
+            tbkTitle.Text = $"当前正在检查“{_options?.Grade?.Name + _options?.Name}”作业：{_viewModel.CheckJobFolder}";
 
-            var dir = new DirectoryInfo(_folder);
-            var files = dir.GetFiles("*.*", SearchOption.AllDirectories);
+            var files = _viewModel.CheckJobFolder.GetFileInfos();
 
-            var jobs = new List<CheckJobInfo>();
+            JobInfos = new List<CheckJobInfo>();
 
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             foreach (var student in _options?.Students)
@@ -52,15 +59,41 @@ namespace Teaching.Partner.WpfApp
                     job.NameValidity = file.Name.Contains(student.Name);
 #pragma warning restore CS8604 // 可能的 null 引用参数。
 
-                    if (job.IsValid(_style?.Job))
+                    if (job.IsValid(_viewModel.App?.Job))
+                    {
+                        job.File = file;
                         break;
+                    }
                 }
 
-                jobs.Add(job);
+                JobInfos.Add(job);
             }
 
-            dgdResults.ItemsSource = jobs;
+            dgdResults.ItemsSource = JobInfos;
         }
+
+
+        #region Grid Wrapper
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ButtonState != MouseButtonState.Pressed)
+                return;
+
+            DragMove();
+        }
+
+        #endregion
+
+
+        #region Window
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        #endregion
 
     }
 }

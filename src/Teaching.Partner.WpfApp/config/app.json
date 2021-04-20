@@ -1,0 +1,24 @@
+﻿{
+    "Window": {
+        "FontSize": 16,
+        "Width": 1440,
+        "Height": 900
+    },
+    "Tab": {
+        "Item": {
+            "HeaderMargin": 10
+        }
+    },
+    "Job": {
+        "CheckValidity": "both/or/Id/Name",
+        "CompressedFile": "winrar.exe",
+        "CompressedFileExtensions": ".zip,.rar,.7z"
+    },
+    "Rules": [
+        {
+            "Name": "VisualStudio",
+            "ConfigFile": "rules_vs.json",
+            "SupportedFileExtensions": ".sln,.csproj,.cs"
+        }
+    ]
+}

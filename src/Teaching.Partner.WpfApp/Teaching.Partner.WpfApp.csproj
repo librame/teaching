@@ -16,7 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="config\style.json">
+    <None Update="config\rules_vs.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="config\app.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="config\classes.json">

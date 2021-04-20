@@ -11,7 +11,6 @@
 #endregion
 
 using MaterialDesignThemes.Wpf;
-using System;
 using System.Collections.Generic;
 
 namespace Teaching.Partner.WpfApp
@@ -21,13 +20,17 @@ namespace Teaching.Partner.WpfApp
         public MainWindowViewModel(ISnackbarMessageQueue? snackbarMessageQueue)
         {
             Classes = GlobalSettings.ClassesConfigPath.ReadJson<List<ClassOptions>>();
-            Style = GlobalSettings.StyleConfigPath.ReadJson<StyleOptions>();
+            App = GlobalSettings.StyleConfigPath.ReadJson<AppOptions>();
+            App?.InitializeRules();
         }
 
 
         public List<ClassOptions>? Classes { get; }
 
-        public StyleOptions? Style { get; }
+        public List<CheckJobInfo>? JobInfos { get; set; }
 
+        public AppOptions? App { get; }
+
+        public string? CheckJobFolder { get; set; }
     }
 }

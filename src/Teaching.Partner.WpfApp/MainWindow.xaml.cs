@@ -47,8 +47,9 @@ namespace Teaching.Partner.WpfApp
             Snackbar = MainSnackbar;
 
 #pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-            _defaultWidth = Width = (double)_viewModel.Style?.Window?.Width;
-            _defaultHeight = Height = (double)_viewModel.Style?.Window?.Height;
+            _defaultWidth = Width = (double)_viewModel.App?.Window?.Width;
+            _defaultHeight = Height = (double)_viewModel.App?.Window?.Height;
+            FontSize = (double)_viewModel.App?.Window?.FontSize;
 #pragma warning restore CS8629 // 可为 null 的值类型可为 null。
         }
 
@@ -80,7 +81,7 @@ namespace Teaching.Partner.WpfApp
                 var spl = new StackPanel();
 
 #pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-                spl.Margin = new Thickness((double)_viewModel.Style?.Tab?.Item?.HeaderMargin);
+                spl.Margin = new Thickness((double)_viewModel.App?.Tab?.Item?.HeaderMargin);
 #pragma warning restore CS8629 // 可为 null 的值类型可为 null。
 
                 spl.Children.Add(pin);
@@ -133,10 +134,28 @@ namespace Teaching.Partner.WpfApp
                 return;
             }
 
+            _viewModel.CheckJobFolder = dialog.SelectedPath;
+
             var item = tabClasses.SelectedItem as TabItem;
             var options = item?.Tag as ClassOptions;
 
-            var window = new CheckJobWindow(dialog.SelectedPath, options, _viewModel.Style);
+            var window = new CheckJobWindow(options, _viewModel);
+            window.ShowDialog();
+            _viewModel.JobInfos = window.JobInfos;
+        }
+
+        private void ScoringFolderOpen_Click(object sender, RoutedEventArgs e)
+        {
+            if (_viewModel.JobInfos is null)
+            {
+                System.Windows.MessageBox.Show("请先查收作业", "查收作业");
+                return;
+            }
+
+            var item = tabClasses.SelectedItem as TabItem;
+            var options = item?.Tag as ClassOptions;
+
+            var window = new ScoringWindow(options, _viewModel);
             window.ShowDialog();
         }
 
@@ -166,7 +185,7 @@ namespace Teaching.Partner.WpfApp
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowState = WindowState.Minimized;
         }
 
         private void btnMaximize_Click(object sender, RoutedEventArgs e)

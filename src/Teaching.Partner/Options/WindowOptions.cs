@@ -14,6 +14,8 @@ namespace Teaching.Partner
 {
     public class WindowOptions
     {
+        public double FontSize { get; set; }
+
         public double Width { get; set; }
 
         public double Height { get; set; }

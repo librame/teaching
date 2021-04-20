@@ -79,12 +79,7 @@ namespace Teaching.Partner
             var json = JsonSerializer.Serialize(value, options);
 
             if (autoCreateDirectory)
-            {
-                var directory = Path.GetDirectoryName(filePath);
-
-                if (!string.IsNullOrEmpty(directory))
-                    Directory.CreateDirectory(directory);
-            }
+                filePath.TryCreateDirectory();
 
             File.WriteAllText(filePath, json, encoding ?? GlobalSettings.CurrentEncoding);
             return json;

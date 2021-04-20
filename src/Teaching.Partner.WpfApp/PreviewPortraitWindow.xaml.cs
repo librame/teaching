@@ -13,7 +13,7 @@ namespace Teaching.Partner.WpfApp
             InitializeComponent();
 
             tbkTitle.Text = options?.Id + options?.Name;
-            imgPortrait.Source = new BitmapImage(GlobalUtility.ToImageUri(options?.Portrait));
+            imgPortrait.Source = new BitmapImage(options?.Portrait.ToUri());
         }
 
     }

@@ -32,6 +32,12 @@ namespace Teaching.Partner
         public static readonly string CurrentDirectory
             = Directory.GetCurrentDirectory();
 
+        /// <summary>
+        /// 配置目录。
+        /// </summary>
+        public static readonly string ConfigDirectory
+            = Path.Combine(CurrentDirectory, "config");
+
 
         /// <summary>
         /// 班级配置路径。
