@@ -48,7 +48,7 @@ namespace Teaching.Partner
                 throw new ArgumentNullException(nameof(relativePath));
 
             if (string.IsNullOrEmpty(basePath))
-                basePath = GlobalSettings.CurrentDirectory;
+                basePath = GlobalDefaults.CurrentDirectory;
 
             if (relativePath.StartsWith("./") || !relativePath.StartsWith(basePath))
                 return Path.Combine(basePath, relativePath);

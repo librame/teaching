@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="config\rules_vs.json">
+    <None Update="config\rules\测试阅卷规则.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="config\app.json">
+    <None Update="config\settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="config\classes.json">

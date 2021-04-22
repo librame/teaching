@@ -28,15 +28,24 @@
                 </materialDesign:ColorZone>
 
                 <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250*"/>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock x:Name="tbkTitle" Grid.Row="0" VerticalAlignment="Center" Margin="10">
+                    <TextBlock x:Name="tbkTitle" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="10">
                     </TextBlock>
+                    
+                    <ComboBox x:Name="cbxRules" Grid.Row="0" Grid.Column="1" Width="180" />
+                    
+                    <Button x:Name="btnScore" Grid.Row="0" Grid.Column="2" Content="阅卷" Click="btnScore_Click" />
 
-                    <DataGrid x:Name="dgdResults" Grid.Row="1" IsReadOnly="True">
+                    <DataGrid x:Name="dgdResults" Grid.Row="1" Grid.ColumnSpan="3" IsReadOnly="True">
                     </DataGrid>
                 </Grid>
             </DockPanel>

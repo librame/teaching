@@ -12,18 +12,20 @@
 
 using RulesEngine.Interfaces;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace Teaching.Partner
 {
-    public class RulesOptions
+    public class RuleOptions
     {
         public string? Name { get; set; }
 
-        public string? ConfigFile { get; set; }
+        public string? FileName { get; set; }
 
         public string? SupportedFileExtensions { get; set; }
 
-        public IRulesEngine? Rule { get; set; }
+        [JsonIgnore]
+        public IRulesEngine? Engine { get; set; }
 
 
         public bool IsSupportedFileExtension(string extension)

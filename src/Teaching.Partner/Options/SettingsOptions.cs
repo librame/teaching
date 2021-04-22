@@ -16,9 +16,9 @@ using System.Collections.Generic;
 namespace Teaching.Partner
 {
     /// <summary>
-    /// APP 选项。
+    /// 设定选项。
     /// </summary>
-    public class AppOptions
+    public class SettingsOptions
     {
         public WindowOptions? Window { get; set; }
 
@@ -26,7 +26,9 @@ namespace Teaching.Partner
 
         public JobOptions? Job { get; set; }
 
-        public List<RulesOptions>? Rules { get; set; }
+        public bool InitializationRules { get; set; }
+
+        public List<RuleOptions>? Rules { get; set; }
 
 
         public void InitializeRules()
@@ -36,18 +38,18 @@ namespace Teaching.Partner
 
             foreach (var rule in Rules)
             {
-                var configFile = rule?.ConfigFile.SetBasePath(GlobalSettings.ConfigDirectory);
+                var file = rule?.FileName.SetBasePath(GlobalDefaults.RulesConfigDirectory);
 
 #pragma warning disable CS8604 // 可能的 null 引用参数。
-                var workflowRules = configFile.ReadJson<List<WorkflowRules>>();
+                var workflowRules = file.ReadJson<List<WorkflowRules>>();
 #pragma warning restore CS8604 // 可能的 null 引用参数。
 
                 if (workflowRules is null || workflowRules.Count < 1)
                     continue;
 
-                //初始化规则引擎
+                // 初始化规则引擎（单个配置文件对应一个规则引擎实例）
 #pragma warning disable CS8602 // 解引用可能出现空引用。
-                rule.Rule = new RulesEngine.RulesEngine(workflowRules.ToArray(), null);
+                rule.Engine = new RulesEngine.RulesEngine(workflowRules.ToArray(), null);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
             }
         }

@@ -19,9 +19,15 @@ namespace Teaching.Partner.WpfApp
     {
         public MainWindowViewModel(ISnackbarMessageQueue? snackbarMessageQueue)
         {
-            Classes = GlobalSettings.ClassesConfigPath.ReadJson<List<ClassOptions>>();
-            App = GlobalSettings.StyleConfigPath.ReadJson<AppOptions>();
-            App?.InitializeRules();
+            Classes = GlobalDefaults.ClassesConfigPath.ReadJson<List<ClassOptions>>();
+            Settings = GlobalDefaults.SettingsConfigPath.ReadJson<SettingsOptions>();
+
+#pragma warning disable CS8629 // 可为 null 的值类型可为 null。
+            if ((bool)Settings?.InitializationRules)
+#pragma warning restore CS8629 // 可为 null 的值类型可为 null。
+            {
+                Settings.InitializeRules();
+            }
         }
 
 
@@ -29,8 +35,11 @@ namespace Teaching.Partner.WpfApp
 
         public List<CheckJobInfo>? JobInfos { get; set; }
 
-        public AppOptions? App { get; }
+        public SettingsOptions? Settings { get; }
 
         public string? CheckJobFolder { get; set; }
+
+        public List<string> CalledNames { get; set; }
+            = new List<string>();
     }
 }

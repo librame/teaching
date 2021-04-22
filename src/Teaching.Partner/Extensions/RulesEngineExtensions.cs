@@ -11,9 +11,9 @@
 #endregion
 
 using RulesEngine.Extensions;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using static RulesEngine.Extensions.ListofRuleResultTreeExtension;
 
 namespace Teaching.Partner
@@ -23,37 +23,56 @@ namespace Teaching.Partner
     /// </summary>
     public static class RulesEngineExtensions
     {
-        public static int ScoreRules(this FileInfo? file, List<RulesOptions>? rules,
+        /// <summary>
+        /// 阅卷计分。
+        /// </summary>
+        /// <param name="rule">给定的 <see cref="RuleOptions"/>。</param>
+        /// <param name="job">给定的 <see cref="JobOptions"/>。</param>
+        /// <param name="file">给定用于阅卷的 <see cref="FileInfo"/>。</param>
+        /// <param name="onSuccessFunc">给定的成功方法（可选）。</param>
+        /// <param name="onFailureFunc">给定的失败方法（可选）。</param>
+        /// <returns>返回分数。</returns>
+        public static int Score(this RuleOptions rule, JobOptions? job, FileInfo? file,
             OnSuccessFunc? onSuccessFunc = null, OnFailureFunc? onFailureFunc = null)
         {
-            if (file is null || rules is null || rules.Count < 1)
+            if (rule is null || job is null || file is null)
                 return -1;
 
-            var score = 0;
+            var inputs = new List<string>();
 
-            foreach (var rule in rules)
+            // 如果是压缩文件
+            if (job.IsCompressedFileExtension(file.Extension))
             {
-                if (!rule.IsSupportedFileExtension(file.Extension))
-                    continue;
+                // 得到解压文件集合
+                var files = job.UncompressFiles(file);
+                if (files is null || files.Length < 1)
+                    throw new ArgumentException("压缩包文件列表为空");
 
-                var inputs = new object[0];
-
-                //执行规则
-                var resultList = rule?.Rule?.ExecuteAllRulesAsync("Discount", inputs).Result;
-                if (resultList is null || resultList.Count < 1)
-                    continue;
-
-                //处理结果
-                if (onSuccessFunc is not null)
-                    resultList.OnSuccess(onSuccessFunc);
-
-                if (onFailureFunc is not null)
-                    resultList.OnFail(onFailureFunc);
-
-                score += resultList.Average(result => result.SuccessEvent);
+                foreach (var item in files)
+                {
+                    if (rule.IsSupportedFileExtension(item.Extension))
+                        inputs.Add(File.ReadAllText(item.FullName));
+                }
+            }
+            else
+            {
+                if (rule.IsSupportedFileExtension(file.Extension))
+                    inputs.Add(File.ReadAllText(file.FullName));
             }
 
-            return score;
+            //执行规则
+            var resultList = rule.Engine?.ExecuteAllRulesAsync(rule.Name, inputs).Result;
+            if (resultList is null || resultList.Count < 1)
+                return -1;
+
+            //处理结果
+            if (onSuccessFunc is not null)
+                resultList.OnSuccess(onSuccessFunc);
+
+            if (onFailureFunc is not null)
+                resultList.OnFail(onFailureFunc);
+
+            return 0; //resultList.Average(result => result.SuccessEvent);
         }
 
     }

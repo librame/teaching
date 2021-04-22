@@ -1,5 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,9 +48,9 @@ namespace Teaching.Partner.WpfApp
             Snackbar = MainSnackbar;
 
 #pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-            _defaultWidth = Width = (double)_viewModel.App?.Window?.Width;
-            _defaultHeight = Height = (double)_viewModel.App?.Window?.Height;
-            FontSize = (double)_viewModel.App?.Window?.FontSize;
+            _defaultWidth = Width = (double)_viewModel.Settings?.Window?.Width;
+            _defaultHeight = Height = (double)_viewModel.Settings?.Window?.Height;
+            FontSize = (double)_viewModel.Settings?.Window?.FontSize;
 #pragma warning restore CS8629 // 可为 null 的值类型可为 null。
         }
 
@@ -81,7 +82,7 @@ namespace Teaching.Partner.WpfApp
                 var spl = new StackPanel();
 
 #pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-                spl.Margin = new Thickness((double)_viewModel.App?.Tab?.Item?.HeaderMargin);
+                spl.Margin = new Thickness((double)_viewModel.Settings?.Tab?.Item?.HeaderMargin);
 #pragma warning restore CS8629 // 可为 null 的值类型可为 null。
 
                 spl.Children.Add(pin);
@@ -119,6 +120,39 @@ namespace Teaching.Partner.WpfApp
             }
         }
 
+
+        private void RandomCall_Click(object sender, RoutedEventArgs e)
+        {
+            var item = tabClasses.SelectedItem as TabItem;
+            var options = item?.Tag as ClassOptions;
+
+            if (options?.Students is null || options.Students.Count < 1)
+                return;
+
+            var random = new Random();
+
+#pragma warning disable CS8604 // 可能的 null 引用参数。
+            System.Windows.Forms.MessageBox.Show(GetName(options?.Students), "幸运的同学是：");
+#pragma warning restore CS8604 // 可能的 null 引用参数。
+
+            string GetName(List<StudentOptions> students)
+            {
+                var student = students[random.Next(students.Count)];
+
+                if (_viewModel.CalledNames.Count == students.Count)
+                    _viewModel.CalledNames.Clear();
+
+#pragma warning disable CS8604 // 可能的 null 引用参数。
+                if (_viewModel.CalledNames.Contains(student?.Name))
+#pragma warning restore CS8604 // 可能的 null 引用参数。
+                {
+                    return GetName(students);
+                }
+
+                _viewModel.CalledNames.Add(student.Name);
+                return student.Name;
+            }
+        }
 
         private void JobFolderOpen_Click(object sender, RoutedEventArgs e)
         {

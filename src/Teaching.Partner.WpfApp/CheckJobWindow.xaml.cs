@@ -23,7 +23,7 @@ namespace Teaching.Partner.WpfApp
             InitializeWindow();
 
 #pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-            FontSize = (double)viewModel.App?.Window?.FontSize;
+            FontSize = (double)viewModel.Settings?.Window?.FontSize;
 #pragma warning restore CS8629 // 可为 null 的值类型可为 null。
         }
 
@@ -59,7 +59,7 @@ namespace Teaching.Partner.WpfApp
                     job.NameValidity = file.Name.Contains(student.Name);
 #pragma warning restore CS8604 // 可能的 null 引用参数。
 
-                    if (job.IsValid(_viewModel.App?.Job))
+                    if (job.IsValid(_viewModel.Settings?.Job))
                     {
                         job.File = file;
                         break;

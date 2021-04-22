@@ -36,7 +36,7 @@ namespace Teaching.Partner
         public static T? ReadJson<T>(this string filePath, Encoding? encoding = null,
             JsonSerializerOptions? options = null)
         {
-            var json = File.ReadAllText(filePath, encoding ?? GlobalSettings.CurrentEncoding);
+            var json = File.ReadAllText(filePath, encoding ?? GlobalDefaults.CurrentEncoding);
 
             if (options is null)
                 return JsonSerializer.Deserialize<T>(json);
@@ -55,7 +55,7 @@ namespace Teaching.Partner
         public static object? ReadJson(this string filePath, Type type, Encoding? encoding = null,
             JsonSerializerOptions? options = null)
         {
-            var json = File.ReadAllText(filePath, encoding ?? GlobalSettings.CurrentEncoding);
+            var json = File.ReadAllText(filePath, encoding ?? GlobalDefaults.CurrentEncoding);
 
             if (options is null)
                 return JsonSerializer.Deserialize(json, type);
@@ -81,7 +81,7 @@ namespace Teaching.Partner
             if (autoCreateDirectory)
                 filePath.TryCreateDirectory();
 
-            File.WriteAllText(filePath, json, encoding ?? GlobalSettings.CurrentEncoding);
+            File.WriteAllText(filePath, json, encoding ?? GlobalDefaults.CurrentEncoding);
             return json;
         }
 

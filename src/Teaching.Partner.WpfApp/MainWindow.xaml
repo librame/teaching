@@ -22,7 +22,7 @@
                             </Grid.ColumnDefinitions>
 
                             <TextBlock x:Name="tbxWindowTitle" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"
-                                       FontSize="26" Grid.ColumnSpan="2" Text="教学伙伴"/>
+                                       FontSize="26" Grid.ColumnSpan="2" Text="Teaching Partner"/>
 
                             <Button x:Name="btnMinimize" Grid.Column="1" HorizontalAlignment="Left" Click="btnMinimize_Click"
                                     Content="{materialDesign:PackIcon WindowMinimize}"
@@ -43,6 +43,11 @@
                         </Grid.RowDefinitions>
 
                         <Menu IsMainMenu="True" Grid.Row="0">
+                            <MenuItem Header="点名">
+                                <MenuItem x:Name="RandomCall" Header="随机" Click="RandomCall_Click" Icon="{materialDesign:PackIcon Kind=User}" />
+                                <Separator />
+                            </MenuItem>
+                            
                             <MenuItem Header="作业">
                                 <MenuItem x:Name="JobFolderOpen" Header="查收" Click="JobFolderOpen_Click" Icon="{materialDesign:PackIcon Kind=FolderOpen}" />
                                 <Separator />

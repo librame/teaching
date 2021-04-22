@@ -14,10 +14,11 @@
         "CompressedFile": "winrar.exe",
         "CompressedFileExtensions": ".zip,.rar,.7z"
     },
+    "InitializationRules": false,
     "Rules": [
         {
-            "Name": "VisualStudio",
-            "ConfigFile": "rules_vs.json",
+            "Name": "VS阅卷规则",
+            "FileName": "测试阅卷规则.json",
             "SupportedFileExtensions": ".sln,.csproj,.cs"
         }
     ]

@@ -1,6 +1,6 @@
 ﻿[
     {
-        "WorkflowName": "Discount",
+        "WorkflowName": "VS阅卷规则",
         "Rules": [
             {
                 "RuleName": "GiveDiscount10",

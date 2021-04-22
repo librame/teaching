@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -23,7 +24,7 @@ namespace Teaching.Partner.WpfApp
             InitializeWindow();
 
 #pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-            FontSize = (double)viewModel.App?.Window?.FontSize;
+            FontSize = (double)viewModel.Settings?.Window?.FontSize;
 #pragma warning restore CS8629 // 可为 null 的值类型可为 null。
         }
 
@@ -31,6 +32,19 @@ namespace Teaching.Partner.WpfApp
         private void InitializeWindow()
         {
             tbkTitle.Text = $"当前正在批阅“{_options?.Grade?.Name + _options?.Name}”试卷：{_viewModel.CheckJobFolder}";
+
+            cbxRules.DataContext = _viewModel.Settings?.Rules?.Select(r => r.FileName);
+        }
+
+        private void btnScore_Click(object sender, RoutedEventArgs e)
+        {
+            var ruleName = cbxRules.SelectedItem as string;
+            if (string.IsNullOrEmpty(ruleName))
+                return;
+
+            var rule = _viewModel.Settings?.Rules?.FirstOrDefault(r => r.FileName == ruleName);
+            if (rule is null)
+                return;
 
             var scorings = new List<ScoringInfo>();
 
@@ -41,36 +55,14 @@ namespace Teaching.Partner.WpfApp
                 if (jobInfo.File is null)
                     continue;
 
-                int score = 0;
+                var score = rule.Score(_viewModel.Settings?.Job, jobInfo.File);
 
-                // 如果是压缩文件
-#pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-                if ((bool)_viewModel.App?.Job?.IsCompressedFileExtension(jobInfo.File.Extension))
-#pragma warning restore CS8629 // 可为 null 的值类型可为 null。
-                {
-                    // 得到解压文件集合
-                    var files = _viewModel.App.Job.UncompressFiles(jobInfo.File);
-                    if (files is null || files.Length < 1)
-                        continue;
-
-                    foreach (var file in files)
-                    {
-                        score += file.ScoreRules(_viewModel.App.Rules);
-                    }
-                }
-                else
-                {
-                    score = jobInfo.File.ScoreRules(_viewModel.App.Rules);
-                }
-
-                var scoring = new ScoringInfo
+                scorings.Add(new ScoringInfo
                 {
                     Id = jobInfo.Id,
                     Name = jobInfo.Name,
                     Score = score
-                };
-
-                scorings.Add(scoring);
+                });
             }
 
             dgdResults.ItemsSource = scorings;
