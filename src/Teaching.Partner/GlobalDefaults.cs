@@ -10,6 +10,7 @@
 
 #endregion
 
+using System;
 using System.IO;
 using System.Text;
 
@@ -44,18 +45,36 @@ namespace Teaching.Partner
         public static readonly string RulesConfigDirectory
             = Path.Combine(ConfigDirectory, "rules");
 
+        /// <summary>
+        /// 点名配置目录。
+        /// </summary>
+        public static readonly string CalledNamesConfigDirectory
+            = Path.Combine(ConfigDirectory, "called_names");
+
 
         /// <summary>
         /// 班级配置路径。
         /// </summary>
         public static readonly string ClassesConfigPath
-            = Path.Combine(CurrentDirectory, "config/classes.json");
+            = Path.Combine(ConfigDirectory, "classes.json");
 
         /// <summary>
         /// 设定配置路径。
         /// </summary>
         public static readonly string SettingsConfigPath
-            = Path.Combine(CurrentDirectory, "config/settings.json");
+            = Path.Combine(ConfigDirectory, "settings.json");
+
+
+        /// <summary>
+        /// 获取点名配置路径。
+        /// </summary>
+        /// <param name="options">给定的 <see cref="ClassOptions"/>。</param>
+        /// <returns>返回字符串。</returns>
+        public static string GetCalledNamesConfigPath(ClassOptions options)
+        {
+            return $"{options?.Grade?.Id}{options?.Id}-{DateTime.Now.ToString("yyyyMMdd")}.txt"
+                .SetBasePath(CalledNamesConfigDirectory);
+        }
 
     }
 }

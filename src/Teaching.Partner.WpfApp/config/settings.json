@@ -1,6 +1,7 @@
 ﻿{
     "Window": {
         "FontSize": 16,
+        "StrikingFontSize": 48,
         "Width": 1440,
         "Height": 900
     },

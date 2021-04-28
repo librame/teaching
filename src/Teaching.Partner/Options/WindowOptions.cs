@@ -16,6 +16,8 @@ namespace Teaching.Partner
     {
         public double FontSize { get; set; }
 
+        public double StrikingFontSize { get; set; }
+
         public double Width { get; set; }
 
         public double Height { get; set; }

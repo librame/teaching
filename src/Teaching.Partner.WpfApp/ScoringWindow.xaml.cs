@@ -10,11 +10,11 @@ namespace Teaching.Partner.WpfApp
     /// </summary>
     public partial class ScoringWindow : Window
     {
-        private readonly ClassOptions? _options;
         private readonly MainWindowViewModel _viewModel;
+        private readonly ClassOptions? _options;
 
 
-        public ScoringWindow(ClassOptions? options, MainWindowViewModel viewModel)
+        public ScoringWindow(MainWindowViewModel viewModel, ClassOptions? options)
         {
             _options = options;
             _viewModel = viewModel;

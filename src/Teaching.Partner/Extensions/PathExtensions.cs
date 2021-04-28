@@ -11,6 +11,7 @@
 #endregion
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Teaching.Partner
@@ -20,6 +21,28 @@ namespace Teaching.Partner
     /// </summary>
     public static class PathExtensions
     {
+        /// <summary>
+        /// 读取所有行集合。
+        /// </summary>
+        /// <param name="filePath">给定的文件路径。</param>
+        /// <returns>返回字符串集合。</returns>
+        public static string[] ReadAllLines(this string filePath)
+        {
+            if (File.Exists(filePath))
+                return File.ReadAllLines(filePath);
+
+            return Array.Empty<string>();
+        }
+
+        /// <summary>
+        /// 写入所有行集合。
+        /// </summary>
+        /// <param name="filePath">给定的文件路径。</param>
+        /// <param name="contents">给定的内容集合。</param>
+        public static void WriteAllLines(this string filePath, IEnumerable<string> contents)
+            => File.WriteAllLines(filePath, contents);
+
+
         /// <summary>
         /// 获取文件信息集合。
         /// </summary>

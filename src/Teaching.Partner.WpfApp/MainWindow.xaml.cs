@@ -129,29 +129,8 @@ namespace Teaching.Partner.WpfApp
             if (options?.Students is null || options.Students.Count < 1)
                 return;
 
-            var random = new Random();
-
-#pragma warning disable CS8604 // 可能的 null 引用参数。
-            System.Windows.Forms.MessageBox.Show(GetName(options?.Students), "幸运的同学是：");
-#pragma warning restore CS8604 // 可能的 null 引用参数。
-
-            string GetName(List<StudentOptions> students)
-            {
-                var student = students[random.Next(students.Count)];
-
-                if (_viewModel.CalledNames.Count == students.Count)
-                    _viewModel.CalledNames.Clear();
-
-#pragma warning disable CS8604 // 可能的 null 引用参数。
-                if (_viewModel.CalledNames.Contains(student?.Name))
-#pragma warning restore CS8604 // 可能的 null 引用参数。
-                {
-                    return GetName(students);
-                }
-
-                _viewModel.CalledNames.Add(student.Name);
-                return student.Name;
-            }
+            var window = new CalledNameWindow(_viewModel, options);
+            window.ShowDialog();
         }
 
         private void JobFolderOpen_Click(object sender, RoutedEventArgs e)
@@ -189,7 +168,7 @@ namespace Teaching.Partner.WpfApp
             var item = tabClasses.SelectedItem as TabItem;
             var options = item?.Tag as ClassOptions;
 
-            var window = new ScoringWindow(options, _viewModel);
+            var window = new ScoringWindow(_viewModel, options);
             window.ShowDialog();
         }
 
