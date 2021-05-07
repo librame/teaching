@@ -72,7 +72,7 @@ namespace Teaching.Partner
         /// <returns>返回字符串。</returns>
         public static string GetCalledNamesConfigPath(ClassOptions options)
         {
-            return $"{options?.Grade?.Id}{options?.Id}-{DateTime.Now.ToString("yyyyMMdd")}.txt"
+            return $"{options?.Grade?.Id}{options?.Id}.dat"
                 .SetBasePath(CalledNamesConfigDirectory);
         }
 
