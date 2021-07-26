@@ -2,7 +2,6 @@
   <Import Project="build\Version.props" />
     
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
     <ApplicationIcon>..\..\Librame.ico</ApplicationIcon>
     <Nullable>enable</Nullable>
     <Authors>Librame Pong</Authors>
@@ -14,8 +13,6 @@
     <PackageProjectUrl>https://github.com/librame/teaching</PackageProjectUrl>
     <RepositoryUrl>https://github.com/librame</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\Teaching.Partner.pfx</AssemblyOriginatorKeyFile>
     <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 

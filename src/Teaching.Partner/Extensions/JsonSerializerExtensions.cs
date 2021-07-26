@@ -14,6 +14,7 @@ using System;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Teaching.Partner
 {
@@ -22,6 +23,16 @@ namespace Teaching.Partner
     /// </summary>
     public static class JsonSerializerExtensions
     {
+        private static readonly JsonSerializerOptions _options = InitOptions();
+
+        private static JsonSerializerOptions InitOptions()
+        {
+            var options = new JsonSerializerOptions();
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            return options;
+        }
+
 
         #region ReadJson and WriteJson
 
@@ -31,17 +42,11 @@ namespace Teaching.Partner
         /// <typeparam name="T">指定的反序列化类型。</typeparam>
         /// <param name="filePath">给定的文件路径。</param>
         /// <param name="encoding">给定的 <see cref="Encoding"/>（可选）。</param>
-        /// <param name="options">给定的 <see cref="JsonSerializerOptions"/>（可选）。</param>
         /// <returns>返回反序列化对象。</returns>
-        public static T? ReadJson<T>(this string filePath, Encoding? encoding = null,
-            JsonSerializerOptions? options = null)
+        public static T? ReadJson<T>(this string filePath, Encoding? encoding = null)
         {
             var json = File.ReadAllText(filePath, encoding ?? GlobalDefaults.CurrentEncoding);
-
-            if (options is null)
-                return JsonSerializer.Deserialize<T>(json);
-
-            return JsonSerializer.Deserialize<T>(json, options);
+            return JsonSerializer.Deserialize<T>(json, _options);
         }
 
         /// <summary>
@@ -50,17 +55,11 @@ namespace Teaching.Partner
         /// <param name="filePath">给定的文件路径。</param>
         /// <param name="type">给定的反序列化对象类型。</param>
         /// <param name="encoding">给定的 <see cref="Encoding"/>（可选）。</param>
-        /// <param name="options">给定的 <see cref="JsonSerializerOptions"/>（可选）。</param>
         /// <returns>返回反序列化对象。</returns>
-        public static object? ReadJson(this string filePath, Type type, Encoding? encoding = null,
-            JsonSerializerOptions? options = null)
+        public static object? ReadJson(this string filePath, Type type, Encoding? encoding = null)
         {
             var json = File.ReadAllText(filePath, encoding ?? GlobalDefaults.CurrentEncoding);
-
-            if (options is null)
-                return JsonSerializer.Deserialize(json, type);
-
-            return JsonSerializer.Deserialize(json, type, options);
+            return JsonSerializer.Deserialize(json, type, _options);
         }
 
 
@@ -70,13 +69,12 @@ namespace Teaching.Partner
         /// <param name="filePath">给定的文件路径。</param>
         /// <param name="value">给定的对象值。</param>
         /// <param name="encoding">给定的 <see cref="Encoding"/>（可选）。</param>
-        /// <param name="options">给定的 <see cref="JsonSerializerOptions"/>（可选）。</param>
         /// <param name="autoCreateDirectory">自动创建目录（可选；默认启用）。</param>
         /// <returns>返回 JSON 字符串。</returns>
         public static string WriteJson(this string filePath, object value, Encoding? encoding = null,
-            JsonSerializerOptions? options = null, bool autoCreateDirectory = true)
+            bool autoCreateDirectory = true)
         {
-            var json = JsonSerializer.Serialize(value, options);
+            var json = JsonSerializer.Serialize(value, _options);
 
             if (autoCreateDirectory)
                 filePath.TryCreateDirectory();

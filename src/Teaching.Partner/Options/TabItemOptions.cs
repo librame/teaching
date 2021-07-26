@@ -10,31 +10,33 @@
 
 #endregion
 
+using System.Collections.Generic;
+
 namespace Teaching.Partner
 {
     /// <summary>
-    /// 窗口选项。
+    /// 标签项选项。
     /// </summary>
-    public class WindowOptions
+    public class TabItemOptions
     {
         /// <summary>
-        /// 字体大小。
+        /// 标题外距。
         /// </summary>
-        public double FontSize { get; set; }
+        public double HeaderMargin { get; set; }
 
         /// <summary>
-        /// 突出字体大小。
+        /// 数据网格内距。
         /// </summary>
-        public double StrikingFontSize { get; set; }
+        public string? DataGridPadding { get; set; }
 
         /// <summary>
-        /// 宽度。
+        /// 序号列可见性。
         /// </summary>
-        public double Width { get; set; }
+        public bool SerialColumnVisibility { get; set; }
 
         /// <summary>
-        /// 高度。
+        /// 显示的学生列集合。
         /// </summary>
-        public double Height { get; set; }
+        public List<StudentColumnOptions>? StudentColumns { get; set; } 
     }
 }

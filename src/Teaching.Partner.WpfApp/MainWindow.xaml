@@ -55,6 +55,7 @@
 
                             <MenuItem Header="阅卷">
                                 <MenuItem x:Name="ScoringFolderOpen" Header="计分" Click="ScoringFolderOpen_Click" Icon="{materialDesign:PackIcon Kind=FolderOpen}" />
+                                <MenuItem x:Name="GenerateScore" Header="生成" Click="GenerateScore_Click" Icon="{materialDesign:PackIcon Kind=File}" />
                                 <Separator />
                             </MenuItem>
                         </Menu>

@@ -1,6 +1,9 @@
 ﻿using MaterialDesignThemes.Wpf;
+using WpfDataGridTextColumn = MaterialDesignThemes.Wpf.DataGridTextColumn;
+using DataBinding = System.Windows.Data.Binding;
+using DataRelativeSource = System.Windows.Data.RelativeSource;
+using DataRelativeSourceMode = System.Windows.Data.RelativeSourceMode;
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,11 +50,10 @@ namespace Teaching.Partner.WpfApp
             DataContext = _viewModel;
             Snackbar = MainSnackbar;
 
-#pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-            _defaultWidth = Width = (double)_viewModel.Settings?.Window?.Width;
-            _defaultHeight = Height = (double)_viewModel.Settings?.Window?.Height;
-            FontSize = (double)_viewModel.Settings?.Window?.FontSize;
-#pragma warning restore CS8629 // 可为 null 的值类型可为 null。
+            var window = _viewModel.Settings?.Window!;
+            _defaultWidth = Width = (double)window.Width;
+            _defaultHeight = Height = (double)window.Height;
+            FontSize = (double)window.FontSize;
         }
 
 
@@ -81,9 +83,7 @@ namespace Teaching.Partner.WpfApp
 
                 var spl = new StackPanel();
 
-#pragma warning disable CS8629 // 可为 null 的值类型可为 null。
-                spl.Margin = new Thickness((double)_viewModel.Settings?.Tab?.Item?.HeaderMargin);
-#pragma warning restore CS8629 // 可为 null 的值类型可为 null。
+                spl.Margin = new Thickness((double)_viewModel.Settings?.Tab?.Item?.HeaderMargin!);
 
                 spl.Children.Add(pin);
                 spl.Children.Add(tbk);
@@ -95,15 +95,48 @@ namespace Teaching.Partner.WpfApp
             {
                 var dgd = new DataGrid();
 
-                dgd.MouseDoubleClick += Dgd_MouseDoubleClick;
                 dgd.ItemsSource = options.Students;
                 dgd.IsReadOnly = true;
+                dgd.AutoGenerateColumns = false;
 
+                var padding = _viewModel.Settings?.Tab?.Item?.DataGridPadding!.Split(',')!;
+                dgd.Padding = new Thickness(double.Parse(padding[0]), double.Parse(padding[1]),
+                    double.Parse(padding[2]), double.Parse(padding[3]));
+
+                dgd.LoadingRow += Dgd_LoadingRow;
+                dgd.MouseDoubleClick += Dgd_MouseDoubleClick;
+
+                if ((bool)_viewModel.Settings?.Tab?.Item?.SerialColumnVisibility!)
+                {
+                    dgd.Columns.Add(new WpfDataGridTextColumn()
+                    {
+                        Header = "序号",
+                        Binding = new DataBinding("Header")
+                        {
+                            RelativeSource = new DataRelativeSource(DataRelativeSourceMode.FindAncestor, typeof(DataGridRow), 1)
+                        }
+                    });
+                }
+
+                foreach (var column in _viewModel.Settings?.Tab?.Item?.StudentColumns!)
+                {
+                    dgd.Columns.Add(new WpfDataGridTextColumn()
+                    {
+                        Header = column.Descr ?? column.Name,
+                        Binding = new DataBinding(column.Name)
+                    });
+                }
+                
                 return dgd;
             }
         }
 
-        private void Dgd_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Dgd_LoadingRow(object? sender, DataGridRowEventArgs e)
+        {
+            e.Row.Header = e.Row.GetIndex() + 1;
+        }
+
+        private void Dgd_MouseDoubleClick(object? sender, MouseButtonEventArgs e)
         {
             var item = tabClasses.SelectedItem as TabItem;
             var options = item?.Tag as ClassOptions;
@@ -169,6 +202,15 @@ namespace Teaching.Partner.WpfApp
             var options = item?.Tag as ClassOptions;
 
             var window = new ScoringWindow(_viewModel, options);
+            window.ShowDialog();
+        }
+
+        private void GenerateScore_Click(object sender, RoutedEventArgs e)
+        {
+            var item = tabClasses.SelectedItem as TabItem;
+            var options = item?.Tag as ClassOptions;
+
+            var window = new GenerateScoreWindow(_viewModel, options);
             window.ShowDialog();
         }
 

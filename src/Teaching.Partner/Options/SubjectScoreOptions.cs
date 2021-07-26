@@ -13,28 +13,33 @@
 namespace Teaching.Partner
 {
     /// <summary>
-    /// 窗口选项。
+    /// 科目成绩选项。
     /// </summary>
-    public class WindowOptions
+    public class SubjectScoreOptions
     {
         /// <summary>
-        /// 字体大小。
+        /// 学号。
         /// </summary>
-        public double FontSize { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
-        /// 突出字体大小。
+        /// 姓名。
         /// </summary>
-        public double StrikingFontSize { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
-        /// 宽度。
+        /// 分级。
         /// </summary>
-        public double Width { get; set; }
+        public StudentLevel Level { get; set; }
 
         /// <summary>
-        /// 高度。
+        /// 平时成绩。
         /// </summary>
-        public double Height { get; set; }
+        public int NormalScore { get; set; }
+
+        /// <summary>
+        /// 期末成绩。
+        /// </summary>
+        public int FinalScore { get; set; }
     }
 }

@@ -10,211 +10,253 @@
             {
                 "Id": "20203080801",
                 "Name": "郑鹏",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080802",
                 "Name": "周鸿林",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080803",
                 "Name": "陈加利",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080804",
                 "Name": "赵阳阳",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080805",
                 "Name": "郑涛",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080806",
                 "Name": "杨逍",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080807",
                 "Name": "唐国强",
+                "Level": "G",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080808",
                 "Name": "邹金隆",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080809",
                 "Name": "钟明波",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080810",
                 "Name": "张海东",
+                "Level": "DC",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080811",
                 "Name": "荆安明",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080812",
                 "Name": "桂兆龙",
+                "Level": "F",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080813",
                 "Name": "曾凯",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080814",
                 "Name": "程浪",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080815",
                 "Name": "刘大坤",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080816",
                 "Name": "王粤渝",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080817",
                 "Name": "苟驿芯",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080818",
                 "Name": "杨明巧",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080819",
                 "Name": "喻菲",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080821",
                 "Name": "张祖琴",
+                "Level": "E",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080822",
                 "Name": "付汝雯",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080823",
                 "Name": "何连银",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080824",
                 "Name": "杨琴",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080825",
                 "Name": "张松",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080826",
                 "Name": "黄宇鹏",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080827",
                 "Name": "杨林峰",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080828",
                 "Name": "赵乾红",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080829",
                 "Name": "余洪",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080830",
                 "Name": "尹道鸿",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080831",
                 "Name": "周村",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080832",
                 "Name": "许红伟",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080833",
                 "Name": "毛瑞",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080834",
                 "Name": "杨博",
+                "Level": "F",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080835",
                 "Name": "万世芳",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080836",
                 "Name": "龙荆蓝",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080837",
                 "Name": "李鹏",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080838",
                 "Name": "杜明星",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080839",
                 "Name": "王以福",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080840",
                 "Name": "韩毅",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080841",
                 "Name": "陈俊杰",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080842",
                 "Name": "何宗泽",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080843",
                 "Name": "熊坚",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             }
         ]
@@ -230,181 +272,217 @@
             {
                 "Id": "20203081001",
                 "Name": "周雨洁",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081002",
                 "Name": "胡攀",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081003",
                 "Name": "胡颖",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081004",
                 "Name": "邹游",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081005",
                 "Name": "陈琳",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081006",
                 "Name": "江顺",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081007",
                 "Name": "杨鹏",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081009",
                 "Name": "戴文杰",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081011",
                 "Name": "刘婷",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081012",
                 "Name": "李凤",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081013",
                 "Name": "陈欣",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081014",
                 "Name": "罗涛",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081016",
                 "Name": "何佳欣",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081018",
                 "Name": "王才",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081019",
                 "Name": "姜黎偉",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081020",
                 "Name": "陈昭文",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081021",
                 "Name": "王狄浪",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081022",
                 "Name": "刘君豪",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081023",
                 "Name": "刘茂桔",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081024",
                 "Name": "胡浩",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081025",
                 "Name": "王滨",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081026",
                 "Name": "陈郁婷",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081027",
                 "Name": "程乙高",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081028",
                 "Name": "韦依萍",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081030",
                 "Name": "孙鑫鑫",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081032",
                 "Name": "刘帮灿",
+                "Level": "DC",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081034",
                 "Name": "伍晓芬",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081035",
                 "Name": "陈艳",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081036",
                 "Name": "何松",
+                "Level": "DC",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081038",
                 "Name": "褚佩君",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081039",
                 "Name": "董小飞",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081040",
                 "Name": "李万林",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081041",
                 "Name": "刘梦婷",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081042",
                 "Name": "高宝升",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080138",
                 "Name": "刘江林",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203080221",
                 "Name": "唐豪",
+                "Level": "E",
                 "Portrait": "images/default.jpg"
             }
         ]
@@ -420,221 +498,265 @@
             {
                 "Id": "20203081201",
                 "Name": "黄惠敏",
+                "Level": "AAA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081202",
                 "Name": "蒲杨",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081203",
                 "Name": "谢浩杰",
+                "Level": "AAA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081204",
                 "Name": "杨静",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081205",
                 "Name": "陈越",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081206",
                 "Name": "潘堂",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081207",
                 "Name": "谭佳龙",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081209",
                 "Name": "欧锋洁",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081210",
                 "Name": "于中海",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081211",
                 "Name": "周辉杰",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081212",
                 "Name": "唐晨",
+                "Level": "AAA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081213",
                 "Name": "刘科东",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081214",
                 "Name": "朱雯",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081215",
                 "Name": "伍登平",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081216",
                 "Name": "彭柯铫",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081217",
                 "Name": "张容",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081219",
                 "Name": "刘琪",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081220",
                 "Name": "杜鸿涛",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081221",
                 "Name": "曾祥龙",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081222",
                 "Name": "李璐君",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081223",
                 "Name": "向永",
+                "Level": "D",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081224",
                 "Name": "陈心洁",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081225",
                 "Name": "高雪琴",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081226",
                 "Name": "谭超",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081227",
                 "Name": "张钰",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081228",
                 "Name": "唐鹏",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081229",
                 "Name": "张旺",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081230",
                 "Name": "陈浩",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081231",
                 "Name": "吴喜忠",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081232",
                 "Name": "熊丽珺",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081233",
                 "Name": "张杰",
+                "Level": "CB",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081234",
                 "Name": "刘一锌",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081235",
                 "Name": "罗民浩",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081236",
                 "Name": "马钦圣",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081237",
                 "Name": "毛玉雪",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081238",
                 "Name": "王华侨",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081239",
                 "Name": "吴江林",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081240",
                 "Name": "谭清月",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081241",
                 "Name": "傅文静",
+                "Level": "BA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081242",
                 "Name": "姚昱",
+                "Level": "B",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081243",
                 "Name": "林海燕",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081423",
                 "Name": "夏雪",
+                "Level": "A",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081408",
                 "Name": "罗莹",
+                "Level": "AA",
                 "Portrait": "images/default.jpg"
             },
             {
                 "Id": "20203081427",
                 "Name": "曾于文",
+                "Level": "C",
                 "Portrait": "images/default.jpg"
             }
         ]

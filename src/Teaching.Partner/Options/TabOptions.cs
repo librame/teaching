@@ -12,13 +12,14 @@
 
 namespace Teaching.Partner
 {
+    /// <summary>
+    /// 标签选项。
+    /// </summary>
     public class TabOptions
     {
+        /// <summary>
+        /// 标签项选项。
+        /// </summary>
         public TabItemOptions? Item { get; set; }
-    }
-
-    public class TabItemOptions
-    {
-        public double HeaderMargin { get; set; }
     }
 }

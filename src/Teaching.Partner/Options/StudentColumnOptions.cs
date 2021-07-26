@@ -13,28 +13,18 @@
 namespace Teaching.Partner
 {
     /// <summary>
-    /// 窗口选项。
+    /// 学生列选项。
     /// </summary>
-    public class WindowOptions
+    public class StudentColumnOptions
     {
         /// <summary>
-        /// 字体大小。
+        /// 名称。
         /// </summary>
-        public double FontSize { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
-        /// 突出字体大小。
+        /// 描述。
         /// </summary>
-        public double StrikingFontSize { get; set; }
-
-        /// <summary>
-        /// 宽度。
-        /// </summary>
-        public double Width { get; set; }
-
-        /// <summary>
-        /// 高度。
-        /// </summary>
-        public double Height { get; set; }
+        public string? Descr { get; set; }
     }
 }

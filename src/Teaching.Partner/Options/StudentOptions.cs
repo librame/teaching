@@ -30,34 +30,39 @@ namespace Teaching.Partner
         public string? Name { get; set; }
 
         /// <summary>
+        /// 分级。
+        /// </summary>
+        public StudentLevel Level { get; set; }
+
+        /// <summary>
         /// 头像。
         /// </summary>
         public string? Portrait { get; set; }
 
-        ///// <summary>
-        ///// 性别。
-        ///// </summary>
-        //public bool Gender { get; set; }
+        /// <summary>
+        /// 性别。
+        /// </summary>
+        public bool Gender { get; set; }
 
-        ///// <summary>
-        ///// 电话。
-        ///// </summary>
-        //public string? Phone { get; set; }
+        /// <summary>
+        /// 电话。
+        /// </summary>
+        public string? Phone { get; set; }
 
-        ///// <summary>
-        ///// 邮箱。
-        ///// </summary>
-        //public string? Email { get; set; }
+        /// <summary>
+        /// 邮箱。
+        /// </summary>
+        public string? Email { get; set; }
 
-        ///// <summary>
-        ///// 身份证。
-        ///// </summary>
-        //public string? IdCard { get; set; }
+        /// <summary>
+        /// 身份证。
+        /// </summary>
+        public string? IdCard { get; set; }
 
-        ///// <summary>
-        ///// 地址。
-        ///// </summary>
-        //public string? Address { get; set; }
+        /// <summary>
+        /// 地址。
+        /// </summary>
+        public string? Address { get; set; }
 
 
         /// <summary>

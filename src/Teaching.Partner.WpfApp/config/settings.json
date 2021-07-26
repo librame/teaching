@@ -2,12 +2,24 @@
     "Window": {
         "FontSize": 16,
         "StrikingFontSize": 48,
-        "Width": 1440,
-        "Height": 900
+        "Width": 1000,
+        "Height": 700
     },
     "Tab": {
         "Item": {
-            "HeaderMargin": 10
+            "HeaderMargin": 10,
+            "DataGridPadding": "10,0,0,0",
+            "SerialColumnVisibility": true,
+            "StudentColumns": [
+                {
+                    "Name": "Id",
+                    "Descr": "学号"
+                },
+                {
+                    "Name": "Name",
+                    "Descr": "姓名"
+                }
+            ]
         }
     },
     "Job": {

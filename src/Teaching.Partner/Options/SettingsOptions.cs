@@ -20,17 +20,35 @@ namespace Teaching.Partner
     /// </summary>
     public class SettingsOptions
     {
+        /// <summary>
+        /// 窗口选项。
+        /// </summary>
         public WindowOptions? Window { get; set; }
 
+        /// <summary>
+        /// 标签选项。
+        /// </summary>
         public TabOptions? Tab { get; set; }
 
+        /// <summary>
+        /// 作业选项。
+        /// </summary>
         public JobOptions? Job { get; set; }
 
+        /// <summary>
+        /// 初始化规则。
+        /// </summary>
         public bool InitializationRules { get; set; }
 
+        /// <summary>
+        /// 规则选项列表。
+        /// </summary>
         public List<RuleOptions>? Rules { get; set; }
 
 
+        /// <summary>
+        /// 初始化规则。
+        /// </summary>
         public void InitializeRules()
         {
             if (Rules is null || Rules.Count < 1)
